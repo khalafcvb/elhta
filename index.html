@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Text Game Online</title>
+</head>
+<body>
+  <h1>Welcome to the Text Game!</h1>
+  <button id="nextBtn">Next Question</button>
+  <p id="questionArea">Press "Next Question" to start.</p>
+
+  <script>
+    const questions = [
+      "لو سبتني، هتندم؟",
+      "بتحبني قد إيه من 1 لـ 10؟",
+      "مين فينا بيحب التاني أكتر؟",
+      "إيه أكتر حاجة بتحبها فيّ؟",
+      "لو خيروك بيني وبين أحلامك، هتختار مين؟"
+    ];
+
+    let index = 0;
+
+    const questionArea = document.getElementById('questionArea');
+    const nextBtn = document.getElementById('nextBtn');
+
+    nextBtn.addEventListener('click', () => {
+      questionArea.textContent = questions[index];
+      index = (index + 1) % questions.length;
+    });
+  </script>
+</body>
+</html>
